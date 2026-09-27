@@ -1,256 +1,441 @@
-<!DOCTYPE HTML>
-<!--
-	Directive by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Directive by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<script src="https://kit.fontawesome.com/8a37cd396d.js" crossorigin="anonymous"></script>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abiyaz Mohammed Nathersa — Data & LLM Platform Engineer</title>
+<meta name="description" content="Software engineer — big-data pipelines, LLM systems, cost & observability tooling">
+<meta property="og:title" content="Abiyaz Mohammed Nathersa — Data & LLM Platform Engineer">
+<meta property="og:description" content="Big-data pipelines, LLM systems, cost & telemetry tooling — Bengaluru software engineer.">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/25822262?v=4">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230A0E14'/%3E%3Cpath d='M9 10L23 16L12 24' stroke='%232DD4BF' stroke-opacity='.45' fill='none'/%3E%3Ccircle cx='9' cy='10' r='3' fill='%232DD4BF'/%3E%3Ccircle cx='23' cy='16' r='3' fill='%23FBBF24'/%3E%3Ccircle cx='12' cy='24' r='3' fill='%232DD4BF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0E14; --surface:#111722; --surface2:#16202e;
+  --ink:#DCE6F2; --muted:#8A95A6; --signal:#2DD4BF; --alert:#FBBF24;
+  --line:#1e2a3a; --line2:#273549;
+  --radius:10px;
+  --sans:"IBM Plex Sans",sans-serif; --disp:"Space Grotesk",sans-serif; --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+::selection{background:var(--signal);color:#06281f}
+a{color:var(--signal);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:14px;z-index:100;background:var(--signal);color:#06281f;font:600 13px var(--mono);padding:10px 16px;border-radius:8px}
+.skip:focus{left:14px}
+section{padding:72px 0}
 
-		<!-- Header -->
-			<div id="header">
-				<span class="logo icon fa-paper-plane"></span>
-				<h1>LOOKING FOR DEVELOPER ?</h1>
-				<p>At CodeSoft, We help designers, small agencies and businesses bring their ideas to life.</p>
-			</div>
+/* stage eyebrows */
+.stage{font:600 12px/1 var(--mono);color:var(--signal);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:34px}
+.stage::after{content:"";flex:1;height:1px;background:var(--line)}
+.stage .num{color:var(--alert)}
 
-		<!-- Main -->
-			<div id="main">
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:min(78svh,640px);display:flex;align-items:center;overflow:hidden}
+#dag{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.hero .wrap{position:relative;z-index:1;padding-block:96px}
+.eyebrow{font:400 13px var(--mono);color:var(--muted);margin-bottom:14px}
+.eyebrow b{color:var(--signal);font-weight:600}
+h1{font:700 clamp(2.4rem,6.5vw,4.4rem)/1.05 var(--disp);letter-spacing:-.02em;margin-bottom:18px}
+h1 .accent{color:var(--signal)}
+.hero .thesis{max-width:33em;color:var(--muted);font-size:1.1rem}
+.hero .thesis strong{color:var(--ink)}
+.cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.now-line{font:400 13px var(--mono);color:var(--muted);margin-top:24px}
+.now-line b{color:var(--alert);font-weight:600}
+.stream{margin-top:26px;font:400 13.5px/1.9 var(--mono);max-width:36em}
+.stream .q{color:var(--muted)}
+.stream .a{color:var(--signal)}
+.stream .cursor{color:var(--alert);animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.pulse{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--signal);margin-right:9px;box-shadow:0 0 0 0 rgba(45,212,191,.45);animation:ping 2.2s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(45,212,191,0)}100%{box-shadow:0 0 0 0 rgba(45,212,191,0)}}
+.side{display:grid;gap:22px}
+.side .subnotes{margin-top:0}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 14px var(--mono);padding:13px 22px;border-radius:var(--radius);cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink);transition:transform .15s ease,border-color .15s ease,background .15s ease}
+.btn:hover{border-color:var(--signal);background:var(--surface2);text-decoration:none;transform:translateY(-2px)}
+.btn.primary{background:var(--signal);color:#06281f;border-color:var(--signal)}
+.btn.primary:hover{background:#3ce3cf}
+.scroll-cue{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font:400 11px var(--mono);color:var(--muted);white-space:nowrap;animation:bob 2.2s ease-in-out infinite;z-index:1}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,6px)}}
 
-				<header class="major container medium">
-					<h2>We conduct experiments that
-					<br />
-					may or may not seriously
-					<br />
-					break the universe</h2>
-					<!--
-					<p>Tellus erat mauris ipsum fermentum<br />
-					etiam vivamus nunc nibh morbi.</p>
-					-->
-				</header>
+/* ---------- stats ---------- */
+.readout{border-block:1px solid var(--line);background:var(--surface)}
+.readout .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0}
+.readout .cell{padding:22px 18px;border-right:1px solid var(--line);font-family:var(--mono)}
+.readout .cell:last-child{border-right:none}
+.readout .val{font:600 1.9rem/1 var(--mono);color:var(--alert)}
+.readout .lbl{font:400 11px var(--mono);color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:6px}
 
-				
-				<h4 class="ui horizontal divider header">
-					<i class="fa-sharp fa-solid fa-code"></i>
-					Skills
-				  </h4>
-				<div class="ui four column doubling stackable grid container">
-					<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
-<div class="commonninja_component pid-491ea74d-14ff-4555-88ff-db01cf79a238"></div>
-				</div>
+/* ---------- flagship ---------- */
+.cards{display:grid;gap:20px}
+@media (min-width:900px){
+  .cards{grid-template-columns:1fr 1fr}
+  .card.featured{grid-column:1/-1;display:grid;grid-template-columns:1.25fr .75fr;gap:36px;align-items:center}
+  .card.featured h3{font-size:1.6rem}
+}
+.flow{font:400 12.5px/2 var(--mono);color:var(--muted);border-left:1px solid var(--line);padding-left:20px;justify-self:end;align-self:center}
+.flow b{color:var(--signal);font-weight:600}
+.priv-note{font:400 11.5px var(--mono);color:var(--muted);margin-top:14px;text-align:right}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;transition:transform .2s ease,border-color .2s ease,background .2s ease}
+.card:hover{transform:translateY(-4px);border-color:var(--line2);background:var(--surface2)}
+.card h3{font:700 1.35rem var(--disp);margin-bottom:8px}
+.card .what{color:var(--muted)}
+.card .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.tag{font:400 11.5px var(--mono);color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:3px 11px}
+.tag.hot{color:var(--signal);border-color:color-mix(in srgb,var(--signal) 40%,transparent)}
 
-				<!--
-				<div class="box container">
-					<header>
-						<h2>A lot of generic stuff</h2>
-					</header>
-					<section>
-						<header>
-							<h3>Paragraph</h3>
-							<p>This is the subtitle for this particular heading</p>
-						</header>
-						<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
-						habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
-						leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
-						amet risus elit.</p>
-					</section>
-					<section>
-						<header>
-							<h3>Blockquote</h3>
-						</header>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
-						tempus euismod. Vestibulum ante ipsum primis in faucibus.</blockquote>
-					</section>
-					<section>
-						<header>
-							<h3>Divider</h3>
-						</header>
-						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-						ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-						tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-						posuere cubilia.</p>
-						<hr />
-						<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
-						ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
-						facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
-						tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-						posuere cubilia.</p>
-					</section>
-					<section>
-						<header>
-							<h3>Unordered List</h3>
-						</header>
-						<ul class="default">
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						</ul>
-					</section>
-					<section>
-						<header>
-							<h3>Ordered List</h3>
-						</header>
-						<ol class="default">
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-							<li>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</li>
-						</ol>
-					</section>
-					<section>
-						<header>
-							<h3>Table</h3>
-						</header>
-						<div class="table-wrapper">
-							<table class="default">
-								<thead>
-									<tr>
-										<th>ID</th>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>45815</td>
-										<td>Something</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>24524</td>
-										<td>Nothing</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>45815</td>
-										<td>Something</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>24524</td>
-										<td>Nothing</td>
-										<td>Ut porttitor sagittis lorem, quis eleifend nisi ornare vel.</td>
-										<td>19.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="3"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</section>
-					<section>
-						<header>
-							<h3>Form</h3>
-						</header>
-						<form method="post" action="#">
-							<div class="row">
-								<div class="col-6 col-12-mobilep">
-									<label for="name">Name</label>
-									<input class="text" type="text" name="name" id="name" value="" placeholder="John Doe" />
-								</div>
-								<div class="col-6 col-12-mobilep">
-									<label for="email">Email</label>
-									<input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
-								</div>
-								<div class="col-12">
-									<label for="subject">Subject</label>
-									<input class="text" type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
-								</div>
-								<div class="col-12">
-									<label for="subject">Message</label>
-									<textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions special">
-										<li><input type="submit" value="Send" /></li>
-										<li><input type="reset" value="Reset" class="alt" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</section>
-				</div>
-				-->
+/* ---------- marquee rail ---------- */
+.rail{overflow:hidden;border-block:1px solid var(--line);background:var(--surface);padding:14px 0;white-space:nowrap}
+.rail-label{font:600 12px var(--mono);color:var(--signal);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:10px;padding-top:34px}
+.rail-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.rail .track{display:inline-flex;gap:44px;animation:slide 40s linear infinite;padding-left:44px}
+.rail:hover .track{animation-play-state:paused}
+.rail .item{font:400 14px var(--mono);color:var(--muted)}
+.rail .item b{color:var(--alert);font-weight:600}
+.rail .item .desc{color:#5a6a7d}
+@keyframes slide{to{transform:translateX(-50%)}}
 
-				<footer class="major container medium">
-					<h3>LETS MAKE SOMETHING SPECIAL</h3>
-					<ul class="actions special">
-						<li><a href="#" class="button">Contact Us</a></li>
-					</ul>
-				</footer>
+/* ---------- observe / timeline ---------- */
+.tl{position:relative;padding-left:28px;border-left:1px solid var(--line);display:grid;gap:30px;max-width:44em}
+.tl entry{display:block}
+.entry{position:relative}
+.entry::before{content:"";position:absolute;left:-33px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px color-mix(in srgb,var(--signal) 18%,transparent)}
+.entry.now::before{background:var(--alert);box-shadow:0 0 0 4px color-mix(in srgb,var(--alert) 18%,transparent)}
+.entry .when{font:400 12px var(--mono);color:var(--muted);margin-bottom:3px}
+.entry h3{font:600 1.05rem var(--disp)}
+.entry h3 span{color:var(--muted);font-weight:400}
+.entry p{color:var(--muted);font-size:.95rem;margin-top:6px}
+.entry p .k{color:var(--ink)}
+.paper{display:flex;gap:10px;align-items:baseline;font:400 13px var(--mono);color:var(--muted);padding:5px 0}
+.paper::before{content:"›";color:var(--signal)}
+.subnotes{margin-top:26px;padding:20px 24px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);max-width:44em}
+.subnotes h4{font:600 12px var(--mono);color:var(--alert);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
 
-			</div>
+/* ---------- toolbox ---------- */
+.box{display:flex;flex-wrap:wrap;gap:10px;max-width:52em}
+.box .tag{font-size:13px;padding:6px 15px}
 
-		<!-- Footer -->
-			<div id="footer">
-				<div class="container medium">
+/* ---------- contact ---------- */
+.contact{text-align:left}
+.contact-h{font:700 clamp(1.8rem,4.5vw,2.8rem)/1.2 var(--disp);max-width:16em;margin-bottom:14px}
+.contact p:not(.contact-h){color:var(--muted);max-width:34em}
+.links{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+footer{border-top:1px solid var(--line);padding:22px 0;font:400 12px var(--mono);color:#5a6a7d;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
-					<header class="major last">
-						<h2>Questions or comments?</h2>
-					</header>
+/* scroll spine: where you are in the pipeline, always visible */
+.spine{position:fixed;right:24px;top:50%;translate:0 -50%;z-index:60;display:none}
+@media (min-width:1200px){.spine{display:block}}
+.spine .pos{display:block;font:600 10px var(--mono);color:var(--signal);letter-spacing:.1em;margin-bottom:12px;text-align:right;white-space:nowrap}
+.spine .track{display:flex;flex-direction:column;gap:14px;align-items:center;position:relative}
+.spine .track::before{content:"";position:absolute;top:6px;bottom:6px;width:1px;background:var(--line)}
+.spine a{position:relative;width:10px;height:10px;border-radius:50%;background:var(--surface2);border:1px solid var(--line2);transition:background .2s,border-color .2s,box-shadow .2s,transform .2s}
+.spine a:hover{border-color:var(--signal)}
+.spine a.on{background:var(--signal);border-color:var(--signal);box-shadow:0 0 10px rgba(45,212,191,.45);transform:scale(1.25);animation:spinepulse 2.4s ease-in-out infinite}
+@keyframes spinepulse{50%{box-shadow:0 0 18px rgba(45,212,191,.6)}}
 
+/* ---------- motion ---------- */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}
 
-					<form method="post" action="#">
-						<div class="row">
-							<div class="col-6 col-12-mobilep">
-								<input type="text" name="name" placeholder="Name" />
-							</div>
-							<div class="col-6 col-12-mobilep">
-								<input type="email" name="email" placeholder="Email" />
-							</div>
-							<div class="col-12">
-								<textarea name="message" placeholder="Message" rows="6"></textarea>
-							</div>
-							<div class="col-12">
-								<ul class="actions special">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</div>
-						</div>
-					</form>
+@media (max-width:900px){#dag{display:none}}
+@media (min-width:1000px){
+  #path .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:0 56px;align-items:start}
+  #path .stage{grid-column:1/-1}
+  #path .subnotes{margin-top:0}
+}
+@media (max-width:640px){
+  section{padding:52px 0}
+  .readout .cell{border-bottom:1px solid var(--line)}
+  .tl{padding-left:22px}
+  .entry::before{left:-27px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{transition:none;opacity:1;transform:none}
+  .rail .track,.scroll-cue{animation:none}
+  .stream .cursor,.pulse,.spine a.on{animation:none}
+  .btn,.card{transition:none}
+  #dag{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#work">skip to content</a>
 
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-linkedin"><span class="label">Twitter</span></a></li>
-						
-						<li><a href="https://github.com/Abiyaz" class="icon brands fa-github"><span class="label">Github</span></a></li>
-					</ul>
+<!-- ============ serve/ hero ============ -->
+<header class="hero" id="top">
+  <canvas id="dag" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow"><b>abiyaz@pipeline:~$</b> ./whoami</p>
+    <h1>Abiyaz Mohammed <span class="accent">Nathersa</span></h1>
+    <p class="thesis">Software engineer in Bengaluru. I <strong>build big-data pipelines</strong> (Hadoop&nbsp;→ Spark&nbsp;→ AWS), <strong>wire LLM systems</strong> with LangChain & LangGraph, and I keep <strong>obsessive tooling</strong> for cost, telemetry and everything else.</p>
+    <div class="stream">
+      <p class="q">❯ what do you actually build?</p>
+      <p class="a"><span id="streamtext">big-data pipelines · LLM systems in production · cost &amp; telemetry tooling</span><span class="cursor" aria-hidden="true">▌</span></p>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="mailto:mohammedabiyaz@gmail.com">Say hello ↗</a>
+      <a class="btn" href="https://github.com/Abiyaz">github/Abiyaz</a>
+      <a class="btn" href="https://www.linkedin.com/in/abiz07">linkedin/abiz07</a>
+    </div>
+    <p class="now-line">now: <b>Software Engineer</b> @ JPMorganChase · Bengaluru, India</p>
+  </div>
+  <span class="scroll-cue" aria-hidden="true">▼ scroll through the pipeline</span>
+</header>
 
-					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
+<!-- ============ telemetry ============ -->
+<div class="readout" role="group" aria-label="Career metrics">
+  <div class="wrap">
+    <div class="cell"><div class="val" data-count="8" data-suffix="+">0</div><div class="lbl">years building</div></div>
+    <div class="cell"><div class="val" data-count="4">0</div><div class="lbl">companies</div></div>
+    <div class="cell"><div class="val" data-count="3">0</div><div class="lbl">publications</div></div>
+    <div class="cell"><div class="val" data-count="10" data-suffix="+">0</div><div class="lbl">tools & repos shipped</div></div>
+  </div>
+</div>
 
-				</div>
-			</div>
+<!-- ============ transform/ flagship ============ -->
+<section id="work">
+  <div class="wrap">
+    <h2 class="stage"><span class="num">01</span> work/ — flagship builds</h2>
+    <div class="cards">
+      <article class="card featured rv">
+        <div>
+          <h3>adforge</h3>
+          <p class="what">Full-stack ad platform — backend, frontend and infra, on GCP. The whole loop: serve ads, ingest the event stream, warehouse it, and keep cost visible.</p>
+          <div class="tags"><span class="tag hot">GCP</span><span class="tag">backend</span><span class="tag">frontend</span><span class="tag">infra</span></div>
+        </div>
+        <p class="flow"><b>flow/</b><br>serve → ingest →<br>warehouse → cost ✓</p>
+      </article>
+      <article class="card rv d1">
+        <h3>gcost</h3>
+        <p class="what">Stdlib-only Python CLI that scopes gcloud & BigQuery spend — shells out to the gcloud/bq you already run, no SDK dependency. Cost questions answered in one command.</p>
+        <div class="tags"><span class="tag hot">python</span><span class="tag">gcp</span><span class="tag">bigquery</span><span class="tag">cli</span></div>
+      </article>
+      <article class="card rv d2">
+        <h3>Golden Travels reel generator</h3>
+        <p class="what">LLM-driven content pipeline: turns route and trip data into ready-to-post reels for a travel brand — generation, not templates.</p>
+        <div class="tags"><span class="tag hot">langchain</span><span class="tag">llm</span><span class="tag">content-pipeline</span></div>
+      </article>
+    </div>
+    <p class="priv-note rv">flagship repos are private — say hello for links</p>
+  </div>
+</section>
 
-		<!-- Scripts -->
-		<link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-<script src="semantic/dist/semantic.min.js"></script>
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+<!-- ============ more/ rail ============ -->
+<p class="rail-label wrap">01+ more builds/ — open source &amp; tooling</p>
+<div class="rail" aria-label="Other projects">
+  <div class="track">
+    <span class="item"><b>campaign/</b> <span class="desc">ingestion pipeline</span></span>
+    <span class="item"><b>otel-stack/</b> <span class="desc">OpenTelemetry + Prometheus stack</span></span>
+    <span class="item"><b>finance-apps/</b> <span class="desc">Streamlit finance & analytics apps</span></span>
+    <span class="item"><b>manga-reader/</b> <span class="desc">local-first CBZ + panel detection</span></span>
+    <span class="item"><b>sweep/</b> <span class="desc">safe cache reclaimer CLI</span></span>
+    <span class="item"><b>remote_dev/</b> <span class="desc">remote agent harness</span></span>
+    <span class="item" aria-hidden="true"><b>campaign/</b> <span class="desc">ingestion pipeline</span></span>
+    <span class="item" aria-hidden="true"><b>otel-stack/</b> <span class="desc">OpenTelemetry + Prometheus stack</span></span>
+    <span class="item" aria-hidden="true"><b>finance-apps/</b> <span class="desc">Streamlit finance & analytics apps</span></span>
+    <span class="item" aria-hidden="true"><b>manga-reader/</b> <span class="desc">local-first CBZ + panel detection</span></span>
+    <span class="item" aria-hidden="true"><b>sweep/</b> <span class="desc">safe cache reclaimer CLI</span></span>
+    <span class="item" aria-hidden="true"><b>remote_dev/</b> <span class="desc">remote agent harness</span></span>
+  </div>
+</div>
 
-	</body>
+<!-- ============ observe/ experience ============ -->
+<section id="path">
+  <div class="wrap">
+    <h2 class="stage"><span class="num">02</span> history/ — experience</h2>
+    <div class="tl">
+      <div class="entry now rv"><div class="when">Nov 2024 — now</div><h3>Software Engineer <span>· JPMorganChase</span></h3><p>Engineer on LLM & platform systems — LangChain, LangGraph, shipping model-driven features inside the bank.</p></div>
+      <div class="entry rv"><div class="when">Feb 2022 — Nov 2024</div><h3>Senior Software Engineer — Brake Systems <span>· Bosch Engineering</span></h3><p>Engineering platform team for brake-system engineering software.</p></div>
+      <div class="entry rv d1"><div class="when">Jun 2019 — Feb 2022</div><h3>Software Engineer I / II <span>· Cerner Corporation</span></h3><p>Scalable big-data pipelines & warehouse on Hadoop, Apache Crunch, MapReduce, Spark and Amazon EMR; Hive + S3 storage; Oozie orchestration; Tableau reporting. Migrated ETL estate from on-prem to AWS.</p></div>
+      <div class="entry rv d2"><div class="when">Feb 2018 — Jun 2019</div><h3>Application Development Associate <span>· Accenture</span></h3></div>
+    </div>
+    <div class="side">
+      <div class="subnotes rv">
+        <h4>publications/ + award</h4>
+        <div class="paper">Bluetooth Double Encryption for the Internet of Things</div>
+        <div class="paper">Taking MapReduce to the Next Level using HAMR</div>
+        <div class="paper">Big Data Mining Framework for the Cloud</div>
+        <div class="paper">★ Best Paper Award — Int'l Conf. on Science, Engineering & Technology, 2015</div>
+        <p style="margin-top:12px;color:var(--muted);font-size:.9rem">VIT — MCA Computer Programming (2015–2017) · BCA IT (2012–2015)</p>
+      </div>
+      <div class="subnotes rv d1">
+        <h4>stack/ — languages &amp; systems</h4>
+        <div class="tags">
+          <span class="tag">java</span><span class="tag">python</span>
+          <span class="tag">hadoop</span><span class="tag">spark</span><span class="tag">emr</span><span class="tag">hive</span><span class="tag">s3</span><span class="tag">oozie</span>
+          <span class="tag hot">langchain</span><span class="tag hot">langgraph</span><span class="tag">llm systems</span>
+          <span class="tag">bigquery</span><span class="tag">aws</span><span class="tag">docker</span>
+          <span class="tag">opentelemetry</span><span class="tag">prometheus</span>
+          <span class="tag">jenkins</span><span class="tag">spinnaker</span><span class="tag">chef</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ serve/ contact ============ -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 class="stage"><span class="num">03</span> contact/ — say hello</h2>
+    <p class="contact-h rv">The pipeline ends at people. Let's talk.</p>
+    <p class="rv d1"><span class="pulse" aria-hidden="true"></span>Open to interesting data & LLM problems — pipeline design, warehouse cost sanity, model-driven products.</p>
+    <div class="links rv d2">
+      <a class="btn primary" href="mailto:mohammedabiyaz@gmail.com">mohammedabiyaz@gmail.com</a>
+      <a class="btn" href="https://github.com/Abiyaz">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/abiz07">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© 2026 Abiyaz Mohammed Nathersa</span>
+  <span>Bengaluru, India · <span id="clock">--:--:--</span> IST · open to interesting problems</span>
+</footer>
+
+<nav class="spine" aria-label="Sections">
+  <span class="pos" id="spinepos">00 whoami/</span>
+  <div class="track">
+    <a href="#top" data-s="00 whoami/" aria-label="Top"></a>
+    <a href="#work" data-s="01 work/" aria-label="01 work"></a>
+    <a href="#path" data-s="02 history/" aria-label="02 history"></a>
+    <a href="#contact" data-s="03 contact/" aria-label="03 contact"></a>
+  </div>
+</nav>
+
+<script>
+// ---------- DAG canvas (signature) ----------
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cv = document.getElementById('dag');
+const ctx = cv.getContext('2d');
+let W,H,DPR;
+const nodes=[
+  {id:'events',  x:.56, y:.14, label:'events'},
+  {id:'campaign',x:.60, y:.86, label:'campaign'},
+  {id:'bronze',  x:.69, y:.47, label:'bronze'},
+  {id:'silver',  x:.79, y:.20, label:'silver'},
+  {id:'gold',    x:.87, y:.72, label:'gold'},
+  {id:'bq',      x:.95, y:.34, label:'warehouse'},
+  {id:'serve',   x:.97, y:.90, label:'me', hot:true},
+];
+const edges=[[0,2],[1,2],[2,3],[3,4],[4,5],[5,6],[3,5]];
+let packets=[], dash=0;
+function spawn(){const e=edges[(Math.random()*edges.length)|0];return {e,t:Math.random(),v:.0016+Math.random()*.003,hot:Math.random()<.2}}
+function ctrl(a,b){return [(a.px+b.px)/2,(a.py+b.py)/2+(a.x<b.x?20:-20)]}
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  // edges: dashed + animated offset = direction of flow
+  ctx.lineWidth=1;ctx.setLineDash([3,7]);ctx.lineDashOffset=-dash;
+  ctx.strokeStyle='rgba(45,212,191,.22)';
+  edges.forEach(([ai,bi])=>{const a=nodes[ai],b=nodes[bi],[mx,my]=ctrl(a,b);
+    ctx.beginPath();ctx.moveTo(a.px,a.py);ctx.quadraticCurveTo(mx,my,b.px,b.py);ctx.stroke()});
+  ctx.setLineDash([]);
+  // packets in flight
+  edges.forEach(([ai,bi],ei)=>{
+    const a=nodes[ai],b=nodes[bi],[mx,my]=ctrl(a,b);
+    packets.forEach(p=>{
+      if(p.e!==ei)return;
+      const t=p.t, x=(1-t)*(1-t)*a.px+2*(1-t)*t*mx+t*t*b.px, y=(1-t)*(1-t)*a.py+2*(1-t)*t*my+t*t*b.py;
+      ctx.globalAlpha=.9;ctx.fillStyle=p.hot?'#FBBF24':'#2DD4BF';
+      ctx.beginPath();ctx.arc(x,y,p.hot?2.4:2,0,7);ctx.fill();
+    });
+  });
+  // node pills
+  nodes.forEach(n=>{
+    const w=58,h=22;
+    ctx.globalAlpha=1;
+    ctx.fillStyle='rgba(10,14,20,.85)';
+    roundRect(n.px-w/2,n.py-h/2,w,h,5);ctx.fill();
+    ctx.strokeStyle=n.hot?'rgba(251,191,36,.6)':'rgba(45,212,191,.38)';ctx.lineWidth=1;ctx.stroke();
+    ctx.fillStyle=n.hot?'#FBBF24':'#8A95A6';
+    ctx.font='600 9px "JetBrains Mono", monospace';ctx.textAlign='center';
+    ctx.fillText(n.label.toUpperCase(),n.px,n.py+3);
+  });
+  ctx.globalAlpha=1;
+}
+function roundRect(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
+let running=false;
+function loop(){
+  packets.forEach(p=>{p.t+=p.v;if(p.t>1)Object.assign(p,spawn())});
+  dash=(dash+.35)%10;
+  draw();
+  if(running && !document.hidden)requestAnimationFrame(loop);
+  else if(document.hidden)running=false;
+}
+function paintNow(){
+  DPR=Math.min(devicePixelRatio||1,2);
+  const r=cv.getBoundingClientRect();
+  W=r.width;H=r.height;
+  cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);
+  nodes.forEach(n=>{n.px=n.x*W;n.py=n.y*H});
+  if(!packets.length)packets=Array.from({length:26},spawn);
+}
+function start(){running=true;requestAnimationFrame(loop)}
+addEventListener('resize',()=>{packets=[];paintNow();if(REDUCED)draw()},{passive:true});
+paintNow();
+REDUCED?draw():start();
+
+// ---------- scroll reveal + count-up ----------
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add('in');
+  if(e.target.classList.contains('val'))count(e.target);
+  io.unobserve(e.target);
+}),{threshold:.25});
+document.querySelectorAll('.rv, .val').forEach(x=>io.observe(x));
+function count(v){
+  if(REDUCED){v.textContent=v.dataset.count+(v.dataset.suffix||'');return}
+  const to=+v.dataset.count, suf=v.dataset.suffix||'', t0=performance.now();
+  (function step(t){const p=Math.min((t-t0)/900,1);v.textContent=Math.round(to*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(step)})(t0);
+}
+
+// ---------- token stream: the hero answers like a model generating tokens ----------
+const streamSpan=document.getElementById('streamtext');
+const STREAM=streamSpan.textContent;
+if(REDUCED){
+  document.querySelector('.stream .cursor').style.display='none';
+}else{
+  streamSpan.textContent='';
+  let si=0;
+  setTimeout(function type(){
+    si+=1+(Math.random()<.35?2:0);            // token-sized chunks, not letters
+    streamSpan.textContent=STREAM.slice(0,si);
+    if(si<STREAM.length)setTimeout(type,22+Math.random()*46);
+  },700);
+}
+
+// ---------- footer clock: Bengaluru time, always IST ----------
+const clock=document.getElementById('clock');
+const clockFmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+(function tick(){clock.textContent=clockFmt.format(new Date());setTimeout(tick,1000)})();
+
+// ---------- scroll spine: page position in the pipeline ----------
+const spineLinks=[...document.querySelectorAll('.spine a')];
+const spineMarks=spineLinks.map(a=>document.querySelector(a.getAttribute('href')));
+const spinePos=document.getElementById('spinepos');
+let spineTick=false;
+function spineUpdate(){
+  spineTick=false;
+  const atBottom=scrollY>=document.documentElement.scrollHeight-innerHeight-2;
+  const y=scrollY+innerHeight*.35;
+  let idx=0;
+  if(atBottom)idx=spineMarks.length-1;
+  else spineMarks.forEach((m,i)=>{if(m&&y>=m.getBoundingClientRect().top+scrollY-20)idx=i});
+  spineLinks.forEach((a,i)=>a.classList.toggle('on',i===idx));
+  spinePos.textContent=spineLinks[idx].dataset.s;
+}
+addEventListener('scroll',()=>{if(!spineTick){spineTick=true;requestAnimationFrame(spineUpdate)}},{passive:true});
+spineUpdate();
+</script>
+</body>
 </html>
