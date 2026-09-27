@@ -115,8 +115,12 @@ h1 .accent{color:var(--signal)}
 .entry h3 span{color:var(--muted);font-weight:400}
 .entry p{color:var(--muted);font-size:.95rem;margin-top:6px}
 .entry p .k{color:var(--ink)}
-.paper{display:flex;gap:10px;align-items:baseline;font:400 13px var(--mono);color:var(--muted);padding:5px 0}
-.paper::before{content:"›";color:var(--signal)}
+.paper{display:flex;gap:10px;align-items:center;font:400 13px var(--mono);color:var(--muted);padding:5px 0}
+.paper svg{width:13px;height:13px;flex:none;color:var(--signal);transform-box:fill-box;transform-origin:center;opacity:.85}
+.paper.pub svg{animation:pubbreath 3.6s ease-in-out infinite}
+.paper.award svg{color:var(--alert);opacity:1;animation:awardglow 2.8s ease-in-out infinite}
+@keyframes pubbreath{50%{opacity:1;transform:scale(1.15)}}
+@keyframes awardglow{0%,100%{transform:scale(1) rotate(-6deg)}50%{transform:scale(1.18) rotate(6deg);filter:drop-shadow(0 0 5px rgba(251,191,36,.55))}}
 .subnotes{margin-top:26px;padding:20px 24px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);max-width:44em}
 .subnotes h4{font:600 12px var(--mono);color:var(--alert);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
 
@@ -164,6 +168,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;font:400 12px var(--mono)
   .rv{transition:none;opacity:1;transform:none}
   .rail .track,.scroll-cue{animation:none}
   .stream .cursor,.pulse,.spine a.on{animation:none}
+  .paper svg{animation:none}
   .btn,.card{transition:none}
   #dag{display:none}
 }
@@ -263,10 +268,10 @@ footer{border-top:1px solid var(--line);padding:22px 0;font:400 12px var(--mono)
     <div class="side">
       <div class="subnotes rv">
         <h4>publications/ + award</h4>
-        <div class="paper">Bluetooth Double Encryption for the Internet of Things</div>
-        <div class="paper">Taking MapReduce to the Next Level using HAMR</div>
-        <div class="paper">Big Data Mining Framework for the Cloud</div>
-        <div class="paper">★ Best Paper Award — Int'l Conf. on Science, Engineering & Technology, 2015</div>
+        <div class="paper pub"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13"/><path d="M6.5 9.2h3M6.5 11.7h3"/></svg><span>Bluetooth Double Encryption for the Internet of Things</span></div>
+        <div class="paper pub"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13"/><path d="M6.5 9.2h3M6.5 11.7h3"/></svg><span>Taking MapReduce to the Next Level using HAMR</span></div>
+        <div class="paper pub"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 1.5h5.5L13 5v9.5H4z"/><path d="M9.5 1.5V5H13"/><path d="M6.5 9.2h3M6.5 11.7h3"/></svg><span>Big Data Mining Framework for the Cloud</span></div>
+        <div class="paper award"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 1.5 L9.65 5.73 L14.18 5.99 L10.66 8.86 L11.82 13.26 L8 10.8 L4.18 13.26 L5.34 8.86 L1.82 5.99 L6.35 5.73 Z"/></svg><span>Best Paper Award — Int'l Conf. on Science, Engineering &amp; Technology, 2015</span></div>
         <p style="margin-top:12px;color:var(--muted);font-size:.9rem">VIT — MCA Computer Programming (2015–2017) · BCA IT (2012–2015)</p>
       </div>
       <div class="subnotes rv d1">
