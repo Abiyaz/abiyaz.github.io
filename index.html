@@ -88,6 +88,9 @@ h1 .accent{color:var(--signal)}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;transition:transform .2s ease,border-color .2s ease,background .2s ease}
 .card:hover{transform:translateY(-4px);border-color:var(--line2);background:var(--surface2)}
 .card h3{font:700 1.35rem var(--disp);margin-bottom:8px}
+.card .cardlink{color:var(--ink)}
+.card .cardlink:hover{color:var(--signal)}
+.card .cardlink::after{content:" ↗";color:var(--signal)}
 .card .what{color:var(--muted)}
 .card .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
 .tag{font:400 11.5px var(--mono);color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:3px 11px}
@@ -216,7 +219,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;font:400 12px var(--mono)
     <div class="cards">
       <article class="card featured rv">
         <div>
-          <h3>adforge</h3>
+          <h3><a class="cardlink" href="https://adforge-747907263340.us-central1.run.app/" target="_blank" rel="noopener">adforge</a></h3>
           <p class="what">Full-stack ad platform — backend, frontend and infra, on GCP. The whole loop: serve ads, ingest the event stream, warehouse it, and keep cost visible.</p>
           <div class="tags"><span class="tag hot">GCP</span><span class="tag">backend</span><span class="tag">frontend</span><span class="tag">infra</span></div>
         </div>
